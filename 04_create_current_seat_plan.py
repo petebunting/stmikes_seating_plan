@@ -3,7 +3,7 @@ import numpy
 
 gpdf = geopandas.read_file('stmikes_seats_reserved_distmtx.geojson', layer='stmikes_seats_reserved_distmtx')
 
-allocated_pews = [3, 6, 9, 10, 13, 16, 19, 22, 25, 28, 31, 32, 35, 38, 41, 45, 48, 51, 54, 55, 58, 61, 64]
+allocated_pews = [3, 6, 9, 10, 13, 16, 19, 22, 25, 28, 31, 32, 35, 38, 41, 45, 48, 51, 54, 55, 58, 61, 64, 67, 68, 69]
 
 n_seats = gpdf.shape[0]
 

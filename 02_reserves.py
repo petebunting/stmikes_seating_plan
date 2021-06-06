@@ -10,7 +10,7 @@ gpdf = geopandas.read_file('stmikes_seats_base.geojson', layer='stmikes_seats_ba
 #                 44, 46, 48, 50, 52, 54,
 #                 56, 58, 60, 62, 64, 66]
 
-reserved_seats = [255, 256, 257]
+reserved_seats = [255, 256, 257, 385, 386, 387, 388]
 
 n_seats = gpdf.shape[0]
 

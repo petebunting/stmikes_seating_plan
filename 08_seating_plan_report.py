@@ -21,13 +21,13 @@ def seat_plan_report(vec_file, vec_lyr, allo_seats_col, pew_id_col, seat_id_col)
     seats_metric = n_pews * n_seats
     
     n_invalid_dists = 0
-    print("n_pews: {}".format(n_pews))
-    print("n_seats: {}".format(n_seats))
-    print("Seat Min Distances:")
+    print("Number of Pews: {}".format(n_pews))
+    print("Number of Seats: {}".format(n_seats))
+    print("Seat Min Distances (metres):")
     for seat in seat_ids:
         min_dist = find_closest_seat(gpdf, seat, allo_seats_col, pew_id_col, seat_id_col)
-        print("\tSeat {}: {}".format(seat, min_dist))
-        if min_dist < 1900:
+        print("\tSeat {}: {}".format(seat, round(min_dist/1000.0, 2)))
+        if min_dist < 1950:
             n_invalid_dists += 1
     if n_invalid_dists > 0:
         print("**** WARNING ****")
@@ -37,7 +37,7 @@ def seat_plan_report(vec_file, vec_lyr, allo_seats_col, pew_id_col, seat_id_col)
 
 
 
-seat_plan_report('out_plans/stmikes_seats_allocated_test_96.geojson', 'stmikes_seats_allocated_test_96', 'allocated_seats', 'pew_id', 'seat_id')
+seat_plan_report('out_plans/stmikes_seats_allocated_0.geojson', 'stmikes_seats_allocated_0', 'allocated_seats', 'pew_id', 'seat_id')
 
 
 #seat_plan_report('stmikes_seats_current_pews.geojson', 'stmikes_seats_current_pews', 'allocated_seats_c', 'pew_id', 'seat_id')
